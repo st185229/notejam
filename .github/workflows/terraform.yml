@@ -1,16 +1,17 @@
 name: 'NordCloud'
 
 on: 
-  workflow_dispatch:
-    inputs:
-      createUpdateEnv:
-        description: 'Apply the env'     
-        required: true
-        default: 'false'
+  push:
+    branches:
+    - master
+    paths:
+    - "**/*.tf" 
+    - "**/*.yml"
+    - "**/*.sh"
 
 jobs:
   terraform:
-    name: 'notejam'
+    name: 'notejam-pr-apply'
     runs-on: ubuntu-latest
     environment: production
 
@@ -33,11 +34,13 @@ jobs:
      
      # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
+      id: fmt
       run: terraform fmt -check
       continue-on-error: true
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
+      id: init
       run: terraform init
 
     # Generates an execution plan for Terraform
@@ -74,5 +77,5 @@ jobs:
       run: exit 1
 
     - name: Terraform Apply
-      if: github.ref == 'refs/heads/main' && github.event.inputs.createUpdateEnv == 'true'
+      if: github.ref == 'refs/heads/main' &&  && github.event_name == 'push'
       run: terraform apply -auto-approve
