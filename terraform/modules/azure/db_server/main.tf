@@ -1,3 +1,4 @@
+//Suresh Thomas suresh.thomas@yahoo.com
 resource "azurerm_resource_group" "rg_db" {
   name     = var.resource_group_name
   location = var.location

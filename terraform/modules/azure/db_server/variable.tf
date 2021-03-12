@@ -1,6 +1,6 @@
 //Created by Suresh
 
-
+//Suresh Thomas suresh.thomas@yahoo.com
 variable resource_group_name{
     type =string
 }
@@ -46,7 +46,7 @@ variable "dbproperties" {
   geo_redundant_backup_enabled      = false
   infrastructure_encryption_enabled = false
   public_network_access_enabled     = true
-  ssl_enforcement_enabled           = true
+  ssl_enforcement_enabled           = false
   ssl_minimal_tls_version_enforced  = "TLS1_2"
 
   }

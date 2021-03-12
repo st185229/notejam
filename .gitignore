@@ -64,3 +64,4 @@ terraform/notejam-tf/Readme.txt
 *.backup
 *.exte
 .terraform
+terraform/notejam-tf/terraform.tfstate

@@ -1,7 +1,8 @@
-
-location      = "East US"
-client_id     = "80684b5b-8d63-4191-bb79-76ebe0a08f84"
-client_secret = "PUD8cvslf-jRUeNAQ9p_mHvSsxz5465k5_"
+//Suresh Thomas suresh.thomas@yahoo.com
+location         = "East US"
+standby_location = "West Europe"
+client_id        = "80684b5b-8d63-4191-bb79-76ebe0a08f84"
+client_secret    = "PUD8cvslf-jRUeNAQ9p_mHvSsxz5465k5_"
 //Spoke
 cluster = {
   app_name                     = "aks-notejam"
@@ -35,8 +36,17 @@ dbproperties = {
   geo_redundant_backup_enabled      = false
   infrastructure_encryption_enabled = false
   public_network_access_enabled     = true
-  ssl_enforcement_enabled           = true
+  ssl_enforcement_enabled           = false
   ssl_minimal_tls_version_enforced  = "TLS1_2"
 
-
 }
+//Related to ACR
+
+nodejan_acr = {
+  name                = "acrnoedjam"
+  resource_group_name = "rg-acr"
+  sku                 = "Standard"
+}
+
+nodejan_acr_admin_enabled = false
+

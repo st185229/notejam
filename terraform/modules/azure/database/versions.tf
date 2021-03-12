@@ -1,3 +1,4 @@
+//Suresh Thomas suresh.thomas@yahoo.com
 terraform {
   required_providers {
     azurerm = {

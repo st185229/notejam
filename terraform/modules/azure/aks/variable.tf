@@ -9,6 +9,7 @@ variable "ssh_public_key" {
     default = "~/.ssh/id_rsa.pub"
 }
 
+//Suresh Thomas suresh.thomas@yahoo.com
 variable "dns_prefix" {
     default = "k8stest"
 }

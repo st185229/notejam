@@ -1,3 +1,4 @@
+//Suresh Thomas suresh.thomas@yahoo.com
 module "app-datbase-server" {
   source                       = "../modules/azure/db_server"
   db_server_name               = var.db_server_name
@@ -8,5 +9,9 @@ module "app-datbase-server" {
   db_version                   = var.db_version
   resource_group_name          = var.db_resource_group_name
   location                     = var.location
+
+  #public_network_access_enabled     = var.dbproperties["public_network_access_enabled"]
+  # ssl_enforcement_enabled           = var.dbproperties["ssl_enforcement_enabled"]
+  #ssl_minimal_tls_version_enforced  = var.dbproperties["ssl_minimal_tls_version_enforced"]
 }
 
