@@ -1,6 +1,6 @@
 //Suresh Thomas suresh.thomas@yahoo.com
 module "app-cluster" {
-  source                       = "../modules/azure/aks"
+  source                       = "./azure_modules/aks"
   location                     = var.location
   resource_group_name          = var.cluster["app_resourcegroup"]
   agent_count                  = 1

@@ -1,6 +1,6 @@
 //Suresh Thomas suresh.thomas@yahoo.com
 module "app-datbase-server" {
-  source                       = "../modules/azure/db_server"
+  source                       = "./azure_modules/db_server"
   db_server_name               = var.db_server_name
   administrator_login          = var.administrator_login
   administrator_login_password = var.administrator_login_password
