@@ -59,3 +59,8 @@ bower_components
 .bak
 
 
+terraform/notejam-tf/Readme.txt
+.terraform/**
+*.backup
+*.exte
+.terraform
