@@ -27,7 +27,7 @@ resource "azurerm_public_ip" "bastian_public_ip" {
   name                = "bastianPubIP"
   location            = var.location
   resource_group_name = data.azurerm_resource_group.rg_hub.name
-  allocation_method   = "Dynamic"
+  allocation_method   = "Static"
 
   tags = {
     environment = "nordcloud notejam test"
