@@ -25,10 +25,13 @@ resource "azurerm_virtual_network" "app_vnet" {
   #dns_servers         = ["10.0.0.4", "10.0.0.5"]
   depends_on = [azurerm_network_ddos_protection_plan.notejamprotect]
 
+  //Working code but commended due to cost
+  /*
   ddos_protection_plan {
     id     = azurerm_network_ddos_protection_plan.notejamprotect.id
     enable = true
   }
+  */
 
   subnet {
     name           = "ingress_subnet"

@@ -94,7 +94,7 @@ resource "azurerm_linux_virtual_machine" "bastian_jenkins_vm" {
   location              = var.location
   resource_group_name   = data.azurerm_resource_group.rg_hub.name
   network_interface_ids = [azurerm_network_interface.bastian_nic.id]
-  size                  = "Standard_DS1_v2"
+  size                  = "Standard_A2_v2"
 
 
   #custom_data = ${filebase64(${file("cloud-init-jenkins.txt")})
@@ -105,7 +105,7 @@ resource "azurerm_linux_virtual_machine" "bastian_jenkins_vm" {
   os_disk {
     name                 = "norddisk"
     caching              = "ReadWrite"
-    storage_account_type = "Premium_LRS"
+    storage_account_type = "Standard_LRS"
   }
 
   source_image_reference {
