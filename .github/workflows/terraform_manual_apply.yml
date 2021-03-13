@@ -6,13 +6,12 @@ on:
     createUpdateEnv:
       description: 'Apply the env'     
       required: true
-      default: 'false''
+      default: 'false'
 
 jobs:
   terraform:
-    name: 'notejam-azure-apply'
+    name: "notejam-azure-apply"
     runs-on: ubuntu-latest
-    environment: production
     
     env: 
      ARM_CLIENT_ID: ${{ secrets.TF_VAR_ARM_CLIENT_ID }}
