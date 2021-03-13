@@ -27,6 +27,7 @@ resource "azurerm_log_analytics_solution" "notejam" {
     }
 }
 //app
+/*
 resource "azuread_application" "aks_sp" {
   display_name = "sp-aks-${var.cluster_name}"
 }
@@ -58,7 +59,7 @@ resource "random_string" "aks_sp_password" {
   special          = true
   min_special      = 1
   override_special = "!@-_=+."
-}
+}*/
 resource "azurerm_kubernetes_cluster" "k8s" {
     name                = var.cluster_name
     location            = azurerm_resource_group.k8s.location
@@ -79,10 +80,13 @@ resource "azurerm_kubernetes_cluster" "k8s" {
         vm_size         = "Standard_D2_v2"
     }
 
-     service_principal {
-         client_id     = azuread_service_principal.aks_sp.application_id
-         client_secret = random_string.aks_sp_password.result
+  
+
+  service_principal {
+    client_id     = var.client_id
+    client_secret = var.client_secret
   }
+         
 
     addon_profile {
         oms_agent {
@@ -97,6 +101,6 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     }
 
     tags = {
-        Environment = "Development"
+        environment = "nordcloud notejam test"
     }
 }

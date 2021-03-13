@@ -1,7 +1,8 @@
+
 //Suresh Thomas suresh.thomas@yahoo.com
 location         = "East US"
 standby_location = "West Europe"
-//Spoke
+
 cluster = {
   app_name                     = "aks-notejam"
   app_resourcegroup            = "rg-app"
@@ -47,4 +48,3 @@ nodejan_acr = {
 }
 
 nodejan_acr_admin_enabled = false
-
