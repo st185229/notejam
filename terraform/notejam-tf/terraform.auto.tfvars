@@ -1,8 +1,6 @@
 //Suresh Thomas suresh.thomas@yahoo.com
 location         = "East US"
 standby_location = "West Europe"
-client_id        = ""
-client_secret    = ""
 //Spoke
 cluster = {
   app_name                     = "aks-notejam"
