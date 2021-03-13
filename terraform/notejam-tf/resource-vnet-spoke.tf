@@ -21,7 +21,7 @@ resource "azurerm_virtual_network" "app_vnet" {
   name                = "spokeVirtualNetwork"
   location            = data.azurerm_resource_group.app_rg.location
   resource_group_name = data.azurerm_resource_group.app_rg.name
-  address_space       = ["10.0.0.0/22"]
+  address_space       = ["10.0.4.0/22"]
   #dns_servers         = ["10.0.0.4", "10.0.0.5"]
   #depends_on = [azurerm_network_ddos_protection_plan.notejamprotect]
 
