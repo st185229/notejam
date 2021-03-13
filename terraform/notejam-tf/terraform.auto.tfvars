@@ -48,4 +48,3 @@ nodejan_acr = {
 }
 
 nodejan_acr_admin_enabled = false
-
