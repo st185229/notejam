@@ -18,8 +18,7 @@ resource "azurerm_virtual_network_peering" "HubToSpoke1" {
 }
 resource "azurerm_virtual_network_peering" "Spoke1ToHub" {
   name                      = "peerStoH"
-  resource_group_name       = var.vnet-hub["vnet_resourcegroup"]
+  resource_group_name       = var.cluster["app_resourcegroup"]
   virtual_network_name      = data.azurerm_virtual_network.app_vnet.name
   remote_virtual_network_id = data.azurerm_virtual_network.hub_vnet.id
 }
-
