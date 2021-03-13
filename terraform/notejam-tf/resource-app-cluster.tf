@@ -9,6 +9,6 @@ module "app-cluster" {
   log_analytics_workspace_name = var.cluster["log_analytics_workspace_name"]
   client_id                    = var.client_id
   client_secret                = var.client_secret
-  ssh_public_key               = "${file("keys/cloud-init-jenkins.txt")}"
+  ssh_public_key               = "${file("azure_key.pub")}"
 
 }
