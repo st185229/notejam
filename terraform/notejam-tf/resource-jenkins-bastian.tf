@@ -99,7 +99,7 @@ resource "azurerm_linux_virtual_machine" "bastian_jenkins_vm" {
 
   #custom_data = ${filebase64(${file("cloud-init-jenkins.txt")})
 
-  custom_data = "${filebase64("cloud-init-jenkins.txt")}"
+  custom_data = filebase64("cloud-init-jenkins.txt")
 
 
   os_disk {
