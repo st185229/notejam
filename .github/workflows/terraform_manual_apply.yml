@@ -1,21 +1,16 @@
 name: 'NordCloud'
 
 on: 
-  push:
-    branches:
-    - master
-    paths:
-    - "**/*.tf" 
-    - "**/*.yml"
-    - "**/*.sh"
-  
-  pull_request:
-    paths:
-    - 'terraform/notejam-tf/**'
+ workflow_dispatch:
+  inputs:
+    createUpdateEnv:
+      description: 'Apply the env'     
+      required: true
+      default: 'false''
 
 jobs:
   terraform:
-    name: 'notejam-azure-validate'
+    name: 'notejam-azure-apply'
     runs-on: ubuntu-latest
     environment: production
     
@@ -84,3 +79,7 @@ jobs:
     - name: Terraform Plan Status
       if: steps.plan.outcome == 'failure'
       run: exit 1
+
+    - name: Terraform Apply
+        if: github.ref == 'refs/heads/master' && github.event.inputs.createUpdateEnv == 'true'
+        run: terraform apply -auto-approve
