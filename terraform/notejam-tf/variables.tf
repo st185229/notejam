@@ -8,6 +8,7 @@ variable "standby_location" {
   type = string
 }
 
+ 
 # Variables related to application deployment cluster 
 variable "cluster" {
   type = map
