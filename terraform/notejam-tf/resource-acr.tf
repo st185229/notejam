@@ -1,4 +1,11 @@
 //NodeJam container registry
+
+
+
+data "azuread_service_principal" "aks_principal" {
+  application_id = var.client_id
+}
+
 resource "azurerm_container_registry" "acr-nodejan" {
   name                = var.nodejan_acr["name"]
   resource_group_name = var.nodejan_acr["resource_group_name"]
@@ -6,7 +13,7 @@ resource "azurerm_container_registry" "acr-nodejan" {
   sku                 = var.nodejan_acr["sku"]
   admin_enabled       = var.nodejan_acr_admin_enabled
   tags = {
-    environment = "nordcloud"
+    environment = "nordcloud notejam test"
   }
 
 }
@@ -15,6 +22,6 @@ resource "azurerm_container_registry" "acr-nodejan" {
 resource "azurerm_role_assignment" "acr-nodejan" {
   scope                = azurerm_container_registry.acr-nodejan.id
   role_definition_name = "AcrPull"
-  principal_id         = module.app-cluster.principal_id
+  principal_id         = data.azuread_service_principal.aks_principal.id
 }
 

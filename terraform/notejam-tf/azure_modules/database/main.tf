@@ -5,4 +5,5 @@ resource "azurerm_mysql_database" "db" {
   server_name         = var.db_server_name
   charset             = "utf8"
   collation           = "utf8_unicode_ci"
+
 }

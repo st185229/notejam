@@ -1,3 +1,6 @@
+client_id     = "80684b5b-8d63-4191-bb79-76ebe0a08f84"
+client_secret = "PUD8cvslf-jRUeNAQ9p_mHvSsxz5465k5_"
+
 //Suresh Thomas suresh.thomas@yahoo.com
 location         = "East US"
 standby_location = "West Europe"

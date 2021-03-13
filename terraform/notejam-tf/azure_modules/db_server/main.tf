@@ -2,6 +2,9 @@
 resource "azurerm_resource_group" "rg_db" {
   name     = var.resource_group_name
   location = var.location
+  tags = {
+        environment = "nordcloud notejam test"
+    }
 }
 
 resource "azurerm_mysql_server" "mysqlserver" {
@@ -22,5 +25,9 @@ resource "azurerm_mysql_server" "mysqlserver" {
   infrastructure_encryption_enabled = var.dbproperties["infrastructure_encryption_enabled"]
   public_network_access_enabled     = var.dbproperties["public_network_access_enabled"]
   ssl_enforcement_enabled           = var.dbproperties["ssl_enforcement_enabled"]
-  ssl_minimal_tls_version_enforced  = var.dbproperties["ssl_minimal_tls_version_enforced"]
+  #ssl_minimal_tls_version_enforced  = var.dbproperties["ssl_minimal_tls_version_enforced"]
+
+  tags = {
+        environment = "nordcloud notejam test"
+    }
 }
