@@ -6,3 +6,11 @@ module "app-db" {
   db_server_name         = var.db_server_name
   depends_on             = [module.app-datbase-server]
 }
+
+module "test-db" {
+  source                 = "./azure_modules/database"
+  database_name          = "testdbnotejam"
+  db_resource_group_name = var.db_resource_group_name
+  db_server_name         = var.db_server_name
+  depends_on             = [module.app-datbase-server]
+}
