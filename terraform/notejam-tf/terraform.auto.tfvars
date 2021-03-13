@@ -31,7 +31,7 @@ db_version = "5.7"
 
 dbproperties = {
   auto_grow_enabled                 = true
-  backup_retention_days             = 7
+  backup_retention_days             = 1
   geo_redundant_backup_enabled      = false
   infrastructure_encryption_enabled = false
   public_network_access_enabled     = true
@@ -44,7 +44,7 @@ dbproperties = {
 nodejan_acr = {
   name                = "acrnoedjam"
   resource_group_name = "rg-acr"
-  sku                 = "Standard"
+  sku                 = "Basic"
 }
 
 nodejan_acr_admin_enabled = false
