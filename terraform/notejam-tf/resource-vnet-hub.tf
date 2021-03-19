@@ -27,10 +27,10 @@ resource "azurerm_virtual_network" "hub_vnet" {
   #depends_on = [azurerm_network_ddos_protection_plan.notejamprotect]
 
   #Working code but commended due to cost
-  #ddos_protection_plan {
-  #  id     = azurerm_network_ddos_protection_plan.notejamprotect.id
-  #  enable = true
-  #}
+  ddos_protection_plan {
+    id     = azurerm_network_ddos_protection_plan.notejamprotect.id
+    enable = true
+  }
 
   subnet {
     name           = "hub_subnet_fwall"
