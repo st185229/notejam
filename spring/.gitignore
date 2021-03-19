@@ -1,5 +1,0 @@
-/target/
-db.*
-application.properties
-/.idea/
-/spring.iml
