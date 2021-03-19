@@ -1,7 +1,5 @@
 //NodeJam container registry
 
-
-
 data "azuread_service_principal" "aks_principal" {
   application_id = var.client_id
 }

@@ -14,9 +14,6 @@ resource "azurerm_network_security_group" "app_nsg" {
     environment = "nordcloud notejam test"
   }
 }
-
-
-
 resource "azurerm_virtual_network" "app_vnet" {
   name                = "spokeVirtualNetwork"
   location            = data.azurerm_resource_group.app_rg.location
@@ -27,11 +24,10 @@ resource "azurerm_virtual_network" "app_vnet" {
 
   #Working code but commended due to cost
 
-  #ddos_protection_plan {
-  #  id     = azurerm_network_ddos_protection_plan.notejamprotect.id
-  #  enable = true
-  #}
-
+  /*ddos_protection_plan {
+    id     = azurerm_network_ddos_protection_plan.notejamprotect.id
+    enable = true
+  }*/
 
   subnet {
     name           = "ingress_subnet"
