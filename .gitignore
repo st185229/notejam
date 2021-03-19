@@ -66,3 +66,4 @@ terraform/notejam-tf/Readme.txt
 .terraform
 terraform/notejam-tf/terraform.tfstate
 terraform/notejam-tf/.terraform.lock.hcl
+terraform/terraform.tfstate
